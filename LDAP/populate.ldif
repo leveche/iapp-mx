@@ -1,0 +1,31 @@
+dn: dc=example,dc=org
+objectClass: dcObject
+objectClass: organization
+o: example
+dc: example
+
+dn: uid=user,dc=example,dc=org
+cn: user
+uid: user
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+loginShell: /bin/bash
+uidNumber: 1
+gidNumber: 1
+description: cool guy
+homeDirectory: /tmp
+userpassword: {SASL}user@EXAMPLE.ORG
+
+dn: uid=iamail01,dc=example,dc=org
+cn: iamail01
+uid: iamail01
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+loginShell: /bin/bash
+uidNumber: 999
+gidNumber: 999
+description: MX principal
+homeDirectory: /tmp
+userpassword: {SASL}iamail01@EXAMPLE.ORG
