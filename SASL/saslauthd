@@ -1,0 +1,7 @@
+START=yes
+DESC="SASL Authentication Daemon for OpenLDAP"
+NAME="saslauthd-slapd"
+MECHANISMS="kerberos5"
+MECH_OPTIONS=""
+THREADS=5
+OPTIONS="-c -m /var/run/slapd/sasl"
