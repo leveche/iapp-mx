@@ -1,0 +1,729 @@
+dn: cn=inetorgperson,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: inetorgperson
+olcAttributeTypes: {0}( 2.16.840.1.113730.3.1.1 NAME 'carLicense' DESC 'RFC279
+ 8: vehicle license or registration plate' EQUALITY caseIgnoreMatch SUBSTR cas
+ eIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {1}( 2.16.840.1.113730.3.1.2 NAME 'departmentNumber' DESC '
+ RFC2798: identifies a department within an organization' EQUALITY caseIgnoreM
+ atch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {2}( 2.16.840.1.113730.3.1.241 NAME 'displayName' DESC 'RFC
+ 2798: preferred name to be used when displaying entries' EQUALITY caseIgnoreM
+ atch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SI
+ NGLE-VALUE )
+olcAttributeTypes: {3}( 2.16.840.1.113730.3.1.3 NAME 'employeeNumber' DESC 'RF
+ C2798: numerically identifies an employee within an organization' EQUALITY ca
+ seIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.15 SINGLE-VALUE )
+olcAttributeTypes: {4}( 2.16.840.1.113730.3.1.4 NAME 'employeeType' DESC 'RFC2
+ 798: type of employment for a person' EQUALITY caseIgnoreMatch SUBSTR caseIgn
+ oreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {5}( 0.9.2342.19200300.100.1.60 NAME 'jpegPhoto' DESC 'RFC2
+ 798: a JPEG image' SYNTAX 1.3.6.1.4.1.1466.115.121.1.28 )
+olcAttributeTypes: {6}( 2.16.840.1.113730.3.1.39 NAME 'preferredLanguage' DESC
+  'RFC2798: preferred written or spoken language for a person' EQUALITY caseIg
+ noreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 15 SINGLE-VALUE )
+olcAttributeTypes: {7}( 2.16.840.1.113730.3.1.40 NAME 'userSMIMECertificate' D
+ ESC 'RFC2798: PKCS#7 SignedData used to support S/MIME' SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.5 )
+olcAttributeTypes: {8}( 2.16.840.1.113730.3.1.216 NAME 'userPKCS12' DESC 'RFC2
+ 798: personal identity information, a PKCS #12 PFX' SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.5 )
+olcObjectClasses: {0}( 2.16.840.1.113730.3.2.2 NAME 'inetOrgPerson' DESC 'RFC2
+ 798: Internet Organizational Person' SUP organizationalPerson STRUCTURAL MAY 
+ ( audio $ businessCategory $ carLicense $ departmentNumber $ displayName $ em
+ ployeeNumber $ employeeType $ givenName $ homePhone $ homePostalAddress $ ini
+ tials $ jpegPhoto $ labeledURI $ mail $ manager $ mobile $ o $ pager $ photo 
+ $ roomNumber $ secretary $ uid $ userCertificate $ x500uniqueIdentifier $ pre
+ ferredLanguage $ userSMIMECertificate $ userPKCS12 ) )
+
+dn: cn=samba,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: samba
+olcAttributeTypes: {0}( 1.3.6.1.4.1.7165.2.1.24 NAME 'sambaLMPassword' DESC 'L
+ anManager Password' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.26{32} SINGLE-VALUE )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.7165.2.1.25 NAME 'sambaNTPassword' DESC 'M
+ D4 hash of the unicode password' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26{32} SINGLE-VALUE )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.7165.2.1.26 NAME 'sambaAcctFlags' DESC 'Ac
+ count Flags' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ {16} SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.7165.2.1.27 NAME 'sambaPwdLastSet' DESC 'T
+ imestamp of the last password update' EQUALITY integerMatch SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.7165.2.1.28 NAME 'sambaPwdCanChange' DESC 
+ 'Timestamp of when the user is allowed to update the password' EQUALITY integ
+ erMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.7165.2.1.29 NAME 'sambaPwdMustChange' DESC
+  'Timestamp of when the password will expire' EQUALITY integerMatch SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.7165.2.1.30 NAME 'sambaLogonTime' DESC 'Ti
+ mestamp of last logon' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.27 SINGLE-VALUE )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.7165.2.1.31 NAME 'sambaLogoffTime' DESC 'T
+ imestamp of last logoff' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.27 SINGLE-VALUE )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.7165.2.1.32 NAME 'sambaKickoffTime' DESC '
+ Timestamp of when the user will be logged off automatically' EQUALITY integer
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.7165.2.1.48 NAME 'sambaBadPasswordCount' D
+ ESC 'Bad password attempt count' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {10}( 1.3.6.1.4.1.7165.2.1.49 NAME 'sambaBadPasswordTime' D
+ ESC 'Time of the last bad password attempt' EQUALITY integerMatch SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {11}( 1.3.6.1.4.1.7165.2.1.55 NAME 'sambaLogonHours' DESC '
+ Logon Hours' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ {42} SINGLE-VALUE )
+olcAttributeTypes: {12}( 1.3.6.1.4.1.7165.2.1.33 NAME 'sambaHomeDrive' DESC 'D
+ river letter of home directory mapping' EQUALITY caseIgnoreIA5Match SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.26{4} SINGLE-VALUE )
+olcAttributeTypes: {13}( 1.3.6.1.4.1.7165.2.1.34 NAME 'sambaLogonScript' DESC 
+ 'Logon script path' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.15{255} SINGLE-VALUE )
+olcAttributeTypes: {14}( 1.3.6.1.4.1.7165.2.1.35 NAME 'sambaProfilePath' DESC 
+ 'Roaming profile path' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.15{255} SINGLE-VALUE )
+olcAttributeTypes: {15}( 1.3.6.1.4.1.7165.2.1.36 NAME 'sambaUserWorkstations' 
+ DESC 'List of user workstations the user is allowed to logon to' EQUALITY cas
+ eIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{255} SINGLE-VALUE )
+olcAttributeTypes: {16}( 1.3.6.1.4.1.7165.2.1.37 NAME 'sambaHomePath' DESC 'Ho
+ me directory UNC path' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.15{128} )
+olcAttributeTypes: {17}( 1.3.6.1.4.1.7165.2.1.38 NAME 'sambaDomainName' DESC '
+ Windows NT domain to which the user belongs' EQUALITY caseIgnoreMatch SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.15{128} )
+olcAttributeTypes: {18}( 1.3.6.1.4.1.7165.2.1.47 NAME 'sambaMungedDial' DESC '
+ Base64 encoded user parameter string' EQUALITY caseExactMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.15{1050} )
+olcAttributeTypes: {19}( 1.3.6.1.4.1.7165.2.1.54 NAME 'sambaPasswordHistory' D
+ ESC 'Concatenated MD5 hashes of the salted NT passwords used on this account'
+  EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{32} )
+olcAttributeTypes: {20}( 1.3.6.1.4.1.7165.2.1.20 NAME 'sambaSID' DESC 'Securit
+ y ID' EQUALITY caseIgnoreIA5Match SUBSTR caseExactIA5SubstringsMatch SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.26{64} SINGLE-VALUE )
+olcAttributeTypes: {21}( 1.3.6.1.4.1.7165.2.1.23 NAME 'sambaPrimaryGroupSID' D
+ ESC 'Primary Group Security ID' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26{64} SINGLE-VALUE )
+olcAttributeTypes: {22}( 1.3.6.1.4.1.7165.2.1.51 NAME 'sambaSIDList' DESC 'Sec
+ urity ID List' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26{64} )
+olcAttributeTypes: {23}( 1.3.6.1.4.1.7165.2.1.19 NAME 'sambaGroupType' DESC 'N
+ T Group Type' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SING
+ LE-VALUE )
+olcAttributeTypes: {24}( 1.3.6.1.4.1.7165.2.1.21 NAME 'sambaNextUserRid' DESC 
+ 'Next NT rid to give our for users' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {25}( 1.3.6.1.4.1.7165.2.1.22 NAME 'sambaNextGroupRid' DESC
+  'Next NT rid to give out for groups' EQUALITY integerMatch SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {26}( 1.3.6.1.4.1.7165.2.1.39 NAME 'sambaNextRid' DESC 'Nex
+ t NT rid to give out for anything' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {27}( 1.3.6.1.4.1.7165.2.1.40 NAME 'sambaAlgorithmicRidBase
+ ' DESC 'Base at which the samba RID generation algorithm should operate' EQUA
+ LITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {28}( 1.3.6.1.4.1.7165.2.1.41 NAME 'sambaShareName' DESC 'S
+ hare Name' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SING
+ LE-VALUE )
+olcAttributeTypes: {29}( 1.3.6.1.4.1.7165.2.1.42 NAME 'sambaOptionName' DESC '
+ Option Name' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.15{256} )
+olcAttributeTypes: {30}( 1.3.6.1.4.1.7165.2.1.43 NAME 'sambaBoolOption' DESC '
+ A boolean option' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 S
+ INGLE-VALUE )
+olcAttributeTypes: {31}( 1.3.6.1.4.1.7165.2.1.44 NAME 'sambaIntegerOption' DES
+ C 'An integer option' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .27 SINGLE-VALUE )
+olcAttributeTypes: {32}( 1.3.6.1.4.1.7165.2.1.45 NAME 'sambaStringOption' DESC
+  'A string option' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.26 SINGLE-VALUE )
+olcAttributeTypes: {33}( 1.3.6.1.4.1.7165.2.1.46 NAME 'sambaStringListOption' 
+ DESC 'A string list option' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.15 )
+olcAttributeTypes: {34}( 1.3.6.1.4.1.7165.2.1.53 NAME 'sambaTrustFlags' DESC '
+ Trust Password Flags' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.26 )
+olcAttributeTypes: {35}( 1.3.6.1.4.1.7165.2.1.58 NAME 'sambaMinPwdLength' DESC
+  'Minimal password length (default: 5)' EQUALITY integerMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {36}( 1.3.6.1.4.1.7165.2.1.59 NAME 'sambaPwdHistoryLength' 
+ DESC 'Length of Password History Entries (default: 0 => off)' EQUALITY intege
+ rMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {37}( 1.3.6.1.4.1.7165.2.1.60 NAME 'sambaLogonToChgPwd' DES
+ C 'Force Users to logon for password change (default: 0 => off, 2 => on)' EQU
+ ALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {38}( 1.3.6.1.4.1.7165.2.1.61 NAME 'sambaMaxPwdAge' DESC 'M
+ aximum password age, in seconds (default: -1 => never expire passwords)' EQUA
+ LITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {39}( 1.3.6.1.4.1.7165.2.1.62 NAME 'sambaMinPwdAge' DESC 'M
+ inimum password age, in seconds (default: 0 => allow immediate password chang
+ e)' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {40}( 1.3.6.1.4.1.7165.2.1.63 NAME 'sambaLockoutDuration' D
+ ESC 'Lockout duration in minutes (default: 30, -1 => forever)' EQUALITY integ
+ erMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {41}( 1.3.6.1.4.1.7165.2.1.64 NAME 'sambaLockoutObservation
+ Window' DESC 'Reset time after lockout in minutes (default: 30)' EQUALITY int
+ egerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {42}( 1.3.6.1.4.1.7165.2.1.65 NAME 'sambaLockoutThreshold' 
+ DESC 'Lockout users after bad logon attempts (default: 0 => off)' EQUALITY in
+ tegerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {43}( 1.3.6.1.4.1.7165.2.1.66 NAME 'sambaForceLogoff' DESC 
+ 'Disconnect Users outside logon hours (default: -1 => off, 0 => on)' EQUALITY
+  integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {44}( 1.3.6.1.4.1.7165.2.1.67 NAME 'sambaRefuseMachinePwdCh
+ ange' DESC 'Allow Machine Password changes (default: 0 => off)' EQUALITY inte
+ gerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {45}( 1.3.6.1.4.1.7165.2.1.68 NAME 'sambaClearTextPassword'
+  DESC 'Clear text password (used for trusted domain passwords)' EQUALITY octe
+ tStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
+olcAttributeTypes: {46}( 1.3.6.1.4.1.7165.2.1.69 NAME 'sambaPreviousClearTextP
+ assword' DESC 'Previous clear text password (used for trusted domain password
+ s)' EQUALITY octetStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
+olcObjectClasses: {0}( 1.3.6.1.4.1.7165.2.2.6 NAME 'sambaSamAccount' DESC 'Sam
+ ba 3.0 Auxilary SAM Account' SUP top AUXILIARY MUST ( uid $ sambaSID ) MAY ( 
+ cn $ sambaLMPassword $ sambaNTPassword $ sambaPwdLastSet $ sambaLogonTime $ s
+ ambaLogoffTime $ sambaKickoffTime $ sambaPwdCanChange $ sambaPwdMustChange $ 
+ sambaAcctFlags $ displayName $ sambaHomePath $ sambaHomeDrive $ sambaLogonScr
+ ipt $ sambaProfilePath $ description $ sambaUserWorkstations $ sambaPrimaryGr
+ oupSID $ sambaDomainName $ sambaMungedDial $ sambaBadPasswordCount $ sambaBad
+ PasswordTime $ sambaPasswordHistory $ sambaLogonHours ) )
+olcObjectClasses: {1}( 1.3.6.1.4.1.7165.2.2.4 NAME 'sambaGroupMapping' DESC 'S
+ amba Group Mapping' SUP top AUXILIARY MUST ( gidNumber $ sambaSID $ sambaGrou
+ pType ) MAY ( displayName $ description $ sambaSIDList ) )
+olcObjectClasses: {2}( 1.3.6.1.4.1.7165.2.2.14 NAME 'sambaTrustPassword' DESC 
+ 'Samba Trust Password' SUP top STRUCTURAL MUST ( sambaDomainName $ sambaNTPas
+ sword $ sambaTrustFlags ) MAY ( sambaSID $ sambaPwdLastSet ) )
+olcObjectClasses: {3}( 1.3.6.1.4.1.7165.2.2.15 NAME 'sambaTrustedDomainPasswor
+ d' DESC 'Samba Trusted Domain Password' SUP top STRUCTURAL MUST ( sambaDomain
+ Name $ sambaSID $ sambaClearTextPassword $ sambaPwdLastSet ) MAY sambaPreviou
+ sClearTextPassword )
+olcObjectClasses: {4}( 1.3.6.1.4.1.7165.2.2.5 NAME 'sambaDomain' DESC 'Samba D
+ omain Information' SUP top STRUCTURAL MUST ( sambaDomainName $ sambaSID ) MAY
+  ( sambaNextRid $ sambaNextGroupRid $ sambaNextUserRid $ sambaAlgorithmicRidB
+ ase $ sambaMinPwdLength $ sambaPwdHistoryLength $ sambaLogonToChgPwd $ sambaM
+ axPwdAge $ sambaMinPwdAge $ sambaLockoutDuration $ sambaLockoutObservationWin
+ dow $ sambaLockoutThreshold $ sambaForceLogoff $ sambaRefuseMachinePwdChange 
+ ) )
+olcObjectClasses: {5}( 1.3.6.1.4.1.7165.2.2.7 NAME 'sambaUnixIdPool' DESC 'Poo
+ l for allocating UNIX uids/gids' SUP top AUXILIARY MUST ( uidNumber $ gidNumb
+ er ) )
+olcObjectClasses: {6}( 1.3.6.1.4.1.7165.2.2.8 NAME 'sambaIdmapEntry' DESC 'Map
+ ping from a SID to an ID' SUP top AUXILIARY MUST sambaSID MAY ( uidNumber $ g
+ idNumber ) )
+olcObjectClasses: {7}( 1.3.6.1.4.1.7165.2.2.9 NAME 'sambaSidEntry' DESC 'Struc
+ tural Class for a SID' SUP top STRUCTURAL MUST sambaSID )
+olcObjectClasses: {8}( 1.3.6.1.4.1.7165.2.2.10 NAME 'sambaConfig' DESC 'Samba 
+ Configuration Section' SUP top AUXILIARY MAY description )
+olcObjectClasses: {9}( 1.3.6.1.4.1.7165.2.2.11 NAME 'sambaShare' DESC 'Samba S
+ hare Section' SUP top STRUCTURAL MUST sambaShareName MAY description )
+olcObjectClasses: {10}( 1.3.6.1.4.1.7165.2.2.12 NAME 'sambaConfigOption' DESC 
+ 'Samba Configuration Option' SUP top STRUCTURAL MUST sambaOptionName MAY ( sa
+ mbaBoolOption $ sambaIntegerOption $ sambaStringOption $ sambaStringListoptio
+ n $ description ) )
+
+dn: cn=misc,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: misc
+olcAttributeTypes: {0}( 2.16.840.1.113730.3.1.13 NAME 'mailLocalAddress' DESC 
+ 'RFC822 email address of this recipient' EQUALITY caseIgnoreIA5Match SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.26{256} )
+olcAttributeTypes: {1}( 2.16.840.1.113730.3.1.18 NAME 'mailHost' DESC 'FQDN of
+  the SMTP/MTA of this recipient' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26{256} SINGLE-VALUE )
+olcAttributeTypes: {2}( 2.16.840.1.113730.3.1.47 NAME 'mailRoutingAddress' DES
+ C 'RFC822 routing address of this recipient' EQUALITY caseIgnoreIA5Match SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.26{256} SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.42.2.27.2.1.15 NAME 'rfc822MailMember' DES
+ C 'rfc822 mail address of group member(s)' EQUALITY caseIgnoreIA5Match SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.26 )
+olcObjectClasses: {0}( 2.16.840.1.113730.3.2.147 NAME 'inetLocalMailRecipient'
+  DESC 'Internet local mail recipient' SUP top AUXILIARY MAY ( mailLocalAddres
+ s $ mailHost $ mailRoutingAddress ) )
+olcObjectClasses: {1}( 1.3.6.1.4.1.42.2.27.1.2.5 NAME 'nisMailAlias' DESC 'NIS
+  mail alias' SUP top STRUCTURAL MUST cn MAY rfc822MailMember )
+
+dn: cn=perdition,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: perdition
+olcAttributeTypes: {0}( 1.3.6.1.4.1.12856.10.10 NAME 'username' EQUALITY caseI
+ gnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .15{1024} )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.12856.10.12 NAME 'port' EQUALITY caseIgnor
+ eMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{
+ 1024} )
+olcObjectClasses: {0}( 1.3.6.1.4.1.12856.10.100 NAME 'perditionPopmap' DESC 'P
+ opmap for Perdition' SUP top STRUCTURAL MAY ( uid $ username $ mailhost $ por
+ t ) )
+
+dn: cn=eduperson,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: eduperson
+olcAttributeTypes: {0}( 1.3.6.1.4.1.5923.1.1.1.1 NAME 'eduPersonAffiliation' D
+ ESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseIgnoreMatch SUBSTR ca
+ seIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.5923.1.1.1.2 NAME 'eduPersonNickname' DESC
+  'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseIgnoreMatch SUBSTR caseI
+ gnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.5923.1.1.1.3 NAME 'eduPersonOrgDN' DESC 'e
+ duPerson per Internet2 and EDUCAUSE' EQUALITY distinguishedNameMatch SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.5923.1.1.1.4 NAME 'eduPersonOrgUnitDN' DES
+ C 'eduPerson per Internet2 and EDUCAUSE' EQUALITY distinguishedNameMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.12 )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.5923.1.1.1.5 NAME 'eduPersonPrimaryAffilia
+ tion' DESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseIgnoreMatch SU
+ BSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VA
+ LUE )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.5923.1.1.1.6 NAME 'eduPersonPrincipalName'
+  DESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseIgnoreMatch SUBSTR 
+ caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.5923.1.1.1.7 NAME 'eduPersonEntitlement' D
+ ESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseExactMatch SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.5923.1.1.1.8 NAME 'eduPersonPrimaryOrgUnit
+ DN' DESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY distinguishedNameMat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.5923.1.1.1.9 NAME 'eduPersonScopedAffiliat
+ ion' DESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseIgnoreMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.5923.1.1.1.10 NAME 'eduPersonTargetedID' D
+ ESC 'eduPerson per Internet2 and EDUCAUSE' EQUALITY caseExactMatch SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.15 )
+olcObjectClasses: {0}( 1.3.6.1.4.1.5923.1.1.2 NAME 'eduPerson' AUXILIARY MAY (
+  eduPersonAffiliation $ eduPersonNickname $ eduPersonOrgDN $ eduPersonOrgUnit
+ DN $ eduPersonPrimaryAffiliation $ eduPersonPrincipalName $ eduPersonEntitlem
+ ent $ eduPersonPrimaryOrgUnitDN $ eduPersonScopedAffiliation $ eduPersonTarge
+ tedID ) )
+
+dn: cn=local,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local
+olcObjectIdentifier: {0}UofA 1.3.6.1.4.1.11933
+olcObjectIdentifier: {1}UofAAICT UofA:1
+olcAttributeTypes: {0}( UofAAICT:2 NAME 'role' DESC 'role information for the 
+ entry' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {1}( UofAAICT:3 NAME 'mailForwardingAddress' DESC 'equivale
+ nt to the .forward file' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstrings
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {2}( UofAAICT:6 NAME 'uOfAPrivateComments' DESC 'UofA LDAP 
+ private status comments' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {3}( UofAAICT:7 NAME 'uOfAPublicComments' DESC 'UofA LDAP "
+ publicly" accessible status comments' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {4}( UofAAICT:8 NAME 'uOfAGoogle' DESC 'acceptance of Googl
+ e mail by user' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  )
+olcAttributeTypes: {5}( UofAAICT:9 NAME 'uOfARTI' DESC '3-character AIS/People
+ soft RTI code' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+ )
+olcAttributeTypes: {6}( UofAAICT:5 NAME 'uOfAOffCampusMail' DESC 'Off-campus e
+ mail address' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {7}( UofAAICT:11 NAME 'isPreferred' DESC 'Is this the prefe
+ rred entry?' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE
+ -VALUE )
+olcAttributeTypes: {8}( UofAAICT:12 NAME 'displayMail' DESC 'preferred mail ad
+ dress to be used when displaying entries' EQUALITY caseIgnoreMatch SUBSTR cas
+ eIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcObjectClasses: {0}( UofAAICT:10 NAME 'uOfAInetMailRecipient' DESC 'addition
+ al attributes for mail delivery' SUP inetLocalMailRecipient AUXILIARY MAY ( m
+ ailForwardingAddress $ displayMail ) )
+olcObjectClasses: {1}( UofAAICT:1 NAME 'uOfAInetOrgPerson' DESC 'modified inet
+ OrgPerson' SUP ( pilotPerson $ inetOrgPerson ) STRUCTURAL MAY ( buildingName$
+  info $ mailForwardingAddress $ displayMail $ uOfAOffCampusMail $ role $ uOfA
+ PrivateComments $ uOfAPublicComments $ uOfAGoogle $ uOfARTI $ isPreferred) )
+
+dn: cn=local-aict,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-aict
+olcAttributeTypes: {0}( UofAAICT:4 NAME 'asString' DESC 'string representation
+  of an object' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=local-term,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-term
+olcObjectIdentifier: {0}UofATerm UofA:2
+olcAttributeTypes: {0}( UofATerm:2 NAME 'term' DESC '4-digit term identifier' 
+ EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 )
+olcAttributeTypes: {1}( UofATerm:3 NAME 'termTitle' DESC 'canonical term name'
+  EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {2}( UofATerm:4 NAME 'startDate' DESC 'date on which a term
+ /class starts' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {3}( UofATerm:5 NAME 'endDate' DESC 'date on which a term/c
+ lass ends' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcObjectClasses: {0}( UofATerm:1 NAME 'uOfATerm' DESC 'a term that contains c
+ ourses and classes' STRUCTURAL MUST ( term $ termTitle ) MAY ( startDate $ en
+ dDate ) )
+
+dn: cn=local-subject,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-subject
+olcObjectIdentifier: {0}UofASubject UofA:3
+olcAttributeTypes: {0}( UofASubject:2 NAME 'subject' DESC 'subject abbreviatio
+ n' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( UofASubject:3 NAME 'subjectTitle' DESC 'canonical titl
+ e of a subject abbreviation' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstr
+ ingsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcObjectClasses: {0}( UofASubject:1 NAME 'uOfASubject' DESC 'a subject that c
+ ontains courses' STRUCTURAL MUST ( subject $ subjectTitle ) MAY term )
+
+dn: cn=local-course,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-course
+olcObjectIdentifier: {0}UofACourse UofA:4
+olcAttributeTypes: {0}( UofACourse:2 NAME 'course' DESC '6-digit course identi
+ fier' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( UofACourse:3 NAME 'courses' DESC 'list of 6-digit cour
+ se identifiers' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {2}( UofACourse:4 NAME ( 'catalog' 'courseNumber' ) DESC '3
+ -digit catalog number' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMa
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {3}( UofACourse:5 NAME 'courseTitle' DESC 'canonical title 
+ of a course' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {4}( UofACourse:6 NAME ( 'courseDescription' 'calendarDescr
+ iption' ) DESC 'calendar description' EQUALITY caseIgnoreMatch SUBSTR caseIgn
+ oreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {5}( UofACourse:7 NAME 'facultyCode' DESC '2-letter faculty
+  abbreviation for a subject/course/student' EQUALITY caseIgnoreMatch SUBSTR c
+ aseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {6}( UofACourse:8 NAME 'faculty' DESC 'canonical faculty fo
+ r a subject/course/student' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstri
+ ngsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {7}( UofACourse:9 NAME 'departmentCode' DESC '10-letter dep
+ artment abbreviation for a subject/course/student' EQUALITY caseIgnoreMatch S
+ UBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-V
+ ALUE )
+olcAttributeTypes: {8}( UofACourse:10 NAME 'department' DESC 'canonical depart
+ ment for a subject/course/student' EQUALITY caseIgnoreMatch SUBSTR caseIgnore
+ SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {9}( UofACourse:11 NAME 'career' DESC 'career level for a c
+ ourse/student' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {10}( UofACourse:12 NAME 'units' DESC 'number of credits to
+ wards degree' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcObjectClasses: {0}( UofACourse:1 NAME 'uOfACourse' DESC 'a course that cont
+ ains classes' STRUCTURAL MUST ( course $ subject $ catalog ) MAY ( term $ sub
+ jectTitle $ courseTitle $ courseDescription $ facultyCode $ faculty $ departm
+ entCode $ department $ career $ asString $ units ) )
+
+dn: cn=local-class,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-class
+olcObjectIdentifier: {0}UofAClass UofA:5
+olcAttributeTypes: {0}( UofAClass:2 NAME 'class' DESC '5-digit class identifie
+ r' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( UofAClass:3 NAME 'classes' DESC 'list of 5-digit class
+  identifiers or asString' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.27 )
+olcAttributeTypes: {2}( UofAClass:4 NAME 'classTitle' DESC 'title specific to 
+ this class' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {3}( UofAClass:5 NAME 'section' DESC 'alphanumeric section 
+ identifier' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {4}( UofAClass:6 NAME 'component' DESC 'component type' EQU
+ ALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {5}( UofAClass:7 NAME 'enrollStatus' DESC 'ability to enrol
+ l in this class' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {6}( UofAClass:8 NAME 'classStatus' DESC 'status of this cl
+ ass' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {7}( UofAClass:9 NAME 'campus' DESC 'campus on which this c
+ lass is scheduled' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch 
+ SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {8}( UofAClass:10 NAME 'location' DESC 'where class is held
+  if off-campus' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {9}( UofAClass:11 NAME 'capacity' DESC 'total number of spo
+ ts in this class' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {10}( UofAClass:12 NAME 'classType' DESC 'denotes enrollmen
+ t section' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {11}( UofAClass:13 NAME 'session' DESC 'type of academic se
+ ssion' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {12}( UofAClass:14 NAME 'instructionMode' DESC 'mode of ins
+ truction' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {13}( UofAClass:15 NAME 'instructorUid' DESC 'ccid of the i
+ nstructor(s)' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {14}( UofAClass:21 NAME 'withdrawn' DESC 'list of 5-digit c
+ lass identifiers or asString' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.27 )
+olcAttributeTypes: {15}( UofAClass:22 NAME 'examStatus' DESC 'status of exam d
+ ate for this class' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {16}( UofAClass:23 NAME 'examDate' DESC 'day that the exam 
+ for this class is held' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsM
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {17}( UofAClass:24 NAME 'examStartTime' DESC 'exam start ti
+ me' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALU
+ E )
+olcAttributeTypes: {18}( UofAClass:25 NAME 'examEndTime' DESC 'exam end time' 
+ EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {19}( UofAClass:26 NAME 'examLocation' DESC 'where exam is 
+ held' SUP location SINGLE-VALUE )
+olcAttributeTypes: {20}( UofAClass:27 NAME 'autoEnroll' DESC 'classes in which
+  student is auto-enrolled if in this class' EQUALITY caseIgnoreMatch SUBSTR c
+ aseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {21}( UofAClass:28 NAME 'classNotes' DESC 'descriptive note
+ s for class' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {22}( UofAClass:29 NAME 'classTopic' DESC 'class subject ma
+ tter' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {23}( UofAClass:30 NAME 'classURL' DESC 'class-specific URL
+ , if any. Any type of labeled URL can be used.' SUP labeledURI )
+olcAttributeTypes: {24}( UofAClass:31 NAME 'gradingBasis' DESC 'grading basis 
+ for class' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {25}( UofAClass:32 NAME 'consent' DESC 'indicator of whethe
+ r consent is required to enroll in class' EQUALITY caseIgnoreMatch SUBSTR cas
+ eIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {26}( UofAClass:33 NAME 'enrollment' DESC 'current number o
+ f students enrolled in class' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {27}( UofAClass:17 NAME 'classtime' DESC 'unique identifier
+  for a given class time' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstrings
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {28}( UofAClass:18 NAME 'day' DESC 'day(s) that this class 
+ runs for the given time' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstrings
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {29}( UofAClass:19 NAME 'startTime' DESC 'class start time'
+  EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {30}( UofAClass:20 NAME 'endTime' DESC 'class end time' EQU
+ ALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcObjectClasses: {0}( UofAClass:1 NAME 'uOfAClass' DESC 'a class that contain
+ s classes' SUP top STRUCTURAL MUST ( term $ course $ class $ section $ compon
+ ent ) MAY ( enrollStatus $ classStatus $ campus $ location $ capacity $ start
+ Date $ endDate $ classType $ session $ instructionMode $ instructorUid $ asSt
+ ring $ units $ examStatus $ examDate $ examStartTime $ examEndTime $ examLoca
+ tion $ autoEnroll $ classNotes $ classTopic $ classURL $ gradingBasis $ conse
+ nt $ enrollment ) )
+olcObjectClasses: {1}( UofAClass:16 NAME 'uOfAClassTime' DESC 'class start/end
+  time and location data' SUP top STRUCTURAL MUST ( class $ classtime $ course
+  $ day $ endTime $ startTime $ term ) MAY ( location $ startDate $ endDate ) 
+ )
+
+dn: cn=local-textbook,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-textbook
+olcObjectIdentifier: {0}UofATextbook UofA:10
+olcAttributeTypes: {0}( UofATextbook:2 NAME 'textbook' DESC 'unique identifier
+  for each textbook' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( UofATextbook:3 NAME 'uOfATxStatus' DESC 'textbook stat
+ us' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {2}( UofATextbook:4 NAME 'uOfATxISBN' DESC 'textbook ISBN n
+ umber (or equivalent)' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMa
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {3}( UofATextbook:5 NAME 'uOfATxTitle' DESC 'title of textb
+ ook' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {4}( UofATextbook:6 NAME 'uOfATxAuthor' DESC 'textbook auth
+ or' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.15 )
+olcAttributeTypes: {5}( UofATextbook:7 NAME 'uOfATxPublisher' DESC 'textbook p
+ ublisher' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {6}( UofATextbook:8 NAME 'uOfATxEdition' DESC 'edition of t
+ his version of the textbook' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstr
+ ingsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {7}( UofATextbook:9 NAME 'uOfATxYear' DESC 'year that this 
+ edition of the textbook was published' EQUALITY octetStringMatch SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.40{128} SINGLE-VALUE )
+olcObjectClasses: {0}( UofATextbook:1 NAME 'uOfATextbook' DESC 'UofA Textbook 
+ information' SUP top STRUCTURAL MUST ( term $ course $ class $ textbook ) MAY
+  ( uOfATxStatus $ uOfATxISBN $ uOfATxTitle $ uOfATxAuthor $ uOfATxPublisher $
+  uOfATxEdition $ uOfATxYear ) )
+
+dn: cn=local-student,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-student
+olcObjectIdentifier: {0}UofAStudent UofA:6
+olcAttributeTypes: {0}( UofAStudent:2 NAME 'programCode' DESC 'program abbrevi
+ ation corresponding to degree' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubs
+ tringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( UofAStudent:3 NAME 'program' DESC 'canonical name for 
+ faculty program code' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {2}( UofAStudent:4 NAME 'majorCode' DESC 'major abbreviatio
+ n' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.15 )
+olcAttributeTypes: {3}( UofAStudent:5 NAME 'major' DESC 'canonical major' EQUA
+ LITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.15 )
+olcAttributeTypes: {4}( UofAStudent:6 NAME 'minorCode' DESC 'minor abbreviatio
+ n' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.15 )
+olcAttributeTypes: {5}( UofAStudent:7 NAME 'minor' DESC 'canonical minor' EQUA
+ LITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.15 )
+olcAttributeTypes: {6}( UofAStudent:8 NAME 'academicLoad' DESC 'denotes full-t
+ ime or part-time student' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstring
+ sMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {7}( UofAStudent:9 NAME 'year' DESC 'year of study' EQUALIT
+ Y caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.15 SINGLE-VALUE )
+olcObjectClasses: {0}( UofAStudent:1 NAME 'uOfAStudent' DESC 'a student is enr
+ olled in courses and classes' STRUCTURAL MUST ( term $ uid ) MAY ( classes $ 
+ courses $ facultyCode $ faculty $ departmentCode $ department $ programCode $
+  program $ majorCode $ major $ minorCode $ minor $ career $ academicLoad $ ye
+ ar $ withdrawn ) )
+
+dn: cn=local-instructor,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-instructor
+olcObjectIdentifier: {0}UofAInstructor UofA:7
+olcObjectClasses: {0}( UofAInstructor:1 NAME 'uOfAInstructor' DESC 'an instruc
+ tor teaches courses and classes' STRUCTURAL MUST ( term $ uid ) MAY ( classes
+  $ courses ) )
+
+dn: cn=local-onecard,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-onecard
+olcObjectIdentifier: {0}UofAOneCard UofA:8
+olcAttributeTypes: {0}( UofAOneCard:2 NAME 'uOfAOCBarcode' DESC 'OneCard barco
+ de' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 SINGLE-V
+ ALUE )
+olcAttributeTypes: {1}( UofAOneCard:3 NAME 'uOfAOCCardID' DESC 'OneCard ID num
+ ber' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 SINGLE-
+ VALUE )
+olcAttributeTypes: {2}( UofAOneCard:4 NAME 'uOfAOCPhoto' DESC 'OneCard photo (
+ JPEG image)' SYNTAX 1.3.6.1.4.1.1466.115.121.1.28 SINGLE-VALUE )
+olcAttributeTypes: {3}( UofAOneCard:5 NAME 'uOfAOCPhotoMD5' DESC 'OneCard phot
+ o MD5 checksum' EQUALITY octetStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.4
+ 0{128} SINGLE-VALUE )
+olcAttributeTypes: {4}( UofAOneCard:6 NAME 'uOfAOCProxID' DESC 'OneCard proxy 
+ ID number' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 S
+ INGLE-VALUE )
+olcAttributeTypes: {5}( UofAOneCard:7 NAME 'uOfAOCSignature' DESC 'OneCard sig
+ nature (JPEG image)' SYNTAX 1.3.6.1.4.1.1466.115.121.1.28 SINGLE-VALUE )
+olcAttributeTypes: {6}( UofAOneCard:8 NAME 'uOfAOCSignatureMD5' DESC 'OneCard 
+ signature MD5 checksum' EQUALITY octetStringMatch SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.40{128} SINGLE-VALUE )
+olcAttributeTypes: {7}( UofAOneCard:9 NAME 'uOfAOCSuffix' DESC 'OneCard suffix
+  number' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 SIN
+ GLE-VALUE )
+olcAttributeTypes: {8}( UofAOneCard:10 NAME 'uOfAOCStatus' DESC 'OneCard statu
+ s (RTI)' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {9}( UofAOneCard:11 NAME 'uOfAOCIsActive' DESC 'OneCard act
+ ive flag' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VA
+ LUE )
+olcObjectClasses: {0}( UofAOneCard:1 NAME 'uOfAOneCard' DESC 'UofA OneCard dat
+ a' SUP top AUXILIARY MAY ( uOfAOCBarcode $ uOfAOCCardID $ uOfAOCPhoto $ uOfAO
+ CPhotoMD5 $ uOfAOCProxID $ uOfAOCSignature $ uOfAOCSignatureMD5 $ uOfAOCStatu
+ s $ uOfAOCSuffix $ uOfAOCIsActive ) )
+
+dn: cn=local-departments,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-departments
+olcObjectIdentifier: {0}UofADepartment UofA:9
+olcAttributeTypes: {0}( UofADepartment:2 NAME 'uOfACCIDAA' DESC 'Departmental 
+ CCID authorized approver' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstring
+ sMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {1}( UofADepartment:3 NAME 'uOfADDC' DESC 'Departmental Dea
+ n/Director/Chair' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {2}( UofADepartment:4 NAME 'uOfAParentDepartment' DESC 'Dep
+ arment number of parent node' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubst
+ ringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcObjectClasses: {0}( UofADepartment:1 NAME 'uOfADepartment' DESC 'UofA depar
+ tment object' SUP top STRUCTURAL MUST ( cn $ departmentNumber $ uOfAParentDep
+ artment ) MAY ( uOfACCIDAA $ uOfADDC ) )
+
+dn: cn=local-employee,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: local-employee
+olcObjectIdentifier: {0}UofAEmployee UofA:11
+olcObjectIdentifier: {1}UofAEmplAgreements UofAEmployee:1
+olcObjectIdentifier: {2}UofAEmplAgrmntAttrT UofAEmplAgreements:1
+olcObjectIdentifier: {3}UofAEmplAgrmntObjCl UofAEmplAgreements:2
+olcAttributeTypes: {0}( UofAEmplAgrmntAttrT:1 NAME 'UofAEmplAgreementID' DESC 
+ 'UofA Employee Agreement ID' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstr
+ ingsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( UofAEmplAgrmntAttrT:2 NAME 'UofAEmplAgreementDesc' DES
+ C 'UofA Employee Agreement Description' EQUALITY caseIgnoreMatch SUBSTR caseI
+ gnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {2}( UofAEmplAgrmntAttrT:3 NAME 'UofAEmplAgreementInstanceI
+ D' DESC 'UofA Employee Agreement Instance ID' EQUALITY caseIgnoreMatch SUBSTR
+  caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE 
+ )
+olcAttributeTypes: {3}( UofAEmplAgrmntAttrT:4 NAME 'UofAEmplAgreementRef' DESC
+  'Pointer (DN) to UofA Employee Agreement record' EQUALITY distinguishedNameM
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+olcAttributeTypes: {4}( UofAEmplAgrmntAttrT:5 NAME 'UofAEmplAgreementPerson' D
+ ESC 'UofA Employee Agreement Counterparty' EQUALITY distinguishedNameMatch SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+olcAttributeTypes: {5}( UofAEmplAgrmntAttrT:6 NAME 'UofAEmplAgreementPersonRTI
+ ' DESC 'Role to which a given UofA Employee Agreement applies' EQUALITY disti
+ nguishedNameMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+olcAttributeTypes: {6}( UofAEmplAgrmntAttrT:7 NAME 'UofAEmplAgreementInitiated
+ On' DESC 'UofA Employee Agreement Initiated Timestamp' EQUALITY generalizedTi
+ meMatch ORDERING generalizedTimeOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.24 SINGLE-VALUE )
+olcAttributeTypes: {7}( UofAEmplAgrmntAttrT:8 NAME 'UofAEmplAgreementAgreedOn'
+  DESC 'UofA Employee Agreement Accepted Timestamp' EQUALITY generalizedTimeMa
+ tch ORDERING generalizedTimeOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.2
+ 4 SINGLE-VALUE )
+olcAttributeTypes: {8}( UofAEmplAgrmntAttrT:9 NAME 'UofAEmplAgreementTrainedOn
+ ' DESC 'UofA Employee Agreement Training-Completed Timestamp' EQUALITY genera
+ lizedTimeMatch ORDERING generalizedTimeOrderingMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.24 SINGLE-VALUE )
+olcAttributeTypes: {9}( UofAEmplAgrmntAttrT:10 NAME 'UofAEmplAgreementTraining
+ Version' DESC 'UofA Employee Agreement Training Version' EQUALITY integerMatc
+ h ORDERING integerOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-V
+ ALUE )
+olcAttributeTypes: {10}( UofAEmplAgrmntAttrT:11 NAME 'CONAUpdateRequired' DESC
+  'Must ConA field be updated when this agreement is added for a CCID?' EQUALI
+ TY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {11}( UofAEmplAgrmntAttrT:12 NAME 'communicationEventReason
+ ' DESC 'Reason for Contacting the user' EQUALITY caseIgnoreMatch SUBSTR caseI
+ gnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {12}( UofAEmplAgrmntAttrT:13 NAME 'communicationsEventTime'
+  DESC 'Time of the Communication event' EQUALITY generalizedTimeMatch ORDERIN
+ G generalizedTimeOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 )
+olcAttributeTypes: {13}( UofAEmplAgrmntAttrT:14 NAME 'UofAEmplAgreementSupervi
+ sorNotifiedOn' DESC 'Supervisor Notification Timestamp' EQUALITY generalizedT
+ imeMatch ORDERING generalizedTimeOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.24 SINGLE-VALUE )
+olcAttributeTypes: {14}( UofAEmplAgrmntAttrT:15 NAME 'UofAEmplAgreementExemptD
+ epartment' DESC 'Departments to be excluded from enforcing of this Agreement'
+  EQUALITY integerMatch ORDERING integerOrderingMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.27 )
+olcAttributeTypes: {15}( UofAEmplAgrmntAttrT:16 NAME 'UofAEmplAgreementEmploye
+ eNumber' DESC 'UofA Employee Agreement Counterparty - employee ID' SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.15 EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstrin
+ gsMatch SINGLE-VALUE )
+olcObjectClasses: {0}( UofAEmplAgrmntObjCl:1 NAME 'UofAEmplAgreement' DESC 'Uo
+ fA Employee Agreement' STRUCTURAL MUST UofAEmplAgreementID MAY ( UofAEmplAgre
+ ementDesc $ CONAUpdateRequired $ UofAEmplAgreementExemptDepartment) )
+olcObjectClasses: {1}( UofAEmplAgrmntObjCl:2 NAME 'UofAEmplAgreementInstance' 
+ DESC 'A row in the UofAEmplAgreement x UofAInetOrgPerson table' STRUCTURAL MU
+ ST ( UofAEmplAgreementInstanceID $ UofAEmplAgreementRef ) MAY ( UofAEmplAgree
+ mentEmployeeNumber $ UofAEmplAgreementPerson $ UofAEmplAgreementPersonRTI $ U
+ ofAEmplAgreementInitiatedOn $ UofAEmplAgreementAgreedOn $ UofAEmplAgreementTr
+ ainedOn $ UofAEmplAgreementSupervisorNotifiedOn $ UofAEmplAgreementTrainingVe
+ rsion ) )
+olcObjectClasses: {2}( UofAEmplAgrmntObjCl:3 NAME 'UofACommunicationEvent' DES
+ C 'UofA Communication' STRUCTURAL MUST ( UofAEmplAgreementInstanceID $ commun
+ icationsEventTime $ communicationEventReason ) )
+
