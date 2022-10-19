@@ -1,0 +1,10 @@
+krb5-config	krb5-config/admin_server	string	
+krb5-kdc	krb5-kdc/debconf	boolean	true
+krb5-kdc	krb5-kdc/purge_data_too	boolean	false
+krb5-config	krb5-config/read_conf	boolean	true
+krb5-config	krb5-config/default_realm	string	EXAMPLE.ORG
+krb5-admin-server	krb5-admin-server/newrealm	note	
+krb5-config	krb5-config/add_servers	boolean	false
+krb5-config	krb5-config/add_servers_realm	string	
+krb5-config	krb5-config/kerberos_servers	string	
+krb5-admin-server	krb5-admin-server/kadmind	boolean	true
